@@ -1,0 +1,41 @@
+{
+  "name": "ecommerce-learning",
+  "version": "1.0.0",
+  "description": "MERN shopping cart app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmbiiFox/Ecommerce-EmbiiShop.git"
+  },
+  "author": "Embii Cam Tu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmbiiFox/Ecommerce-EmbiiShop/issues"
+  },
+  "homepage": "https://github.com/EmbiiFox/Ecommerce-EmbiiShop#readme",
+  "keywords": [
+    "MERN",
+    "shopping",
+    "app"
+  ],
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^5.10.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.15"
+  }
+}
