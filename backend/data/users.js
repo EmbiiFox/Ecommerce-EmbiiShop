@@ -1,4 +1,4 @@
-
+import bcrypt from 'bcryptjs'
 const users=[
     {
         name:"Admin User",
@@ -19,4 +19,4 @@ const users=[
 ]
 
 
-export default User;
+export default users;
