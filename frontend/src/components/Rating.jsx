@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import classes from "./Rating.module.css";
+
 const Rating = ({ value, text, color }) => {
   return (
-    <div className={classes.rating}>
+    <div className="rating">
       <span>
         <i
           style={{ color }}
@@ -15,6 +14,8 @@ const Rating = ({ value, text, color }) => {
               : "far fa-star"
           }
         ></i>
+      </span>
+      <span>
         <i
           style={{ color }}
           className={
@@ -25,6 +26,8 @@ const Rating = ({ value, text, color }) => {
               : "far fa-star"
           }
         ></i>
+      </span>
+      <span>
         <i
           style={{ color }}
           className={
@@ -35,6 +38,8 @@ const Rating = ({ value, text, color }) => {
               : "far fa-star"
           }
         ></i>
+      </span>
+      <span>
         <i
           style={{ color }}
           className={
@@ -45,6 +50,8 @@ const Rating = ({ value, text, color }) => {
               : "far fa-star"
           }
         ></i>
+      </span>
+      <span>
         <i
           style={{ color }}
           className={
@@ -60,12 +67,9 @@ const Rating = ({ value, text, color }) => {
     </div>
   );
 };
+
 Rating.defaultProps = {
   color: "#f8e825",
 };
-Rating.propTypes = {
-  value: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
-  color: PropTypes.string,
-};
+
 export default Rating;
