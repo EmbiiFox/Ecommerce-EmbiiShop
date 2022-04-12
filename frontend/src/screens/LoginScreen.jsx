@@ -54,7 +54,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="dark" className="mt-2">
+        <Button type="submit" variant="primary">
           Sign In
         </Button>
       </Form>

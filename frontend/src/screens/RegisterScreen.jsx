@@ -28,12 +28,17 @@ const RegisterScreen = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(register(email, password));
+    if (password !== confirmPassword) {
+      setMessage("Password do not match");
+    } else {
+      dispatch(register(name, email, password));
+    }
   };
 
   return (
     <FormContainer>
       <h1>Sign Up</h1>
+      {message && <Message variant="danger">{message}</Message>}
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -66,16 +71,35 @@ const RegisterScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
+        <Form.Group controlId="confirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
         <Button type="submit" variant="dark" className="mt-2">
-          Sign In
+          Register
         </Button>
       </Form>
 
       <Row className="py-3">
         <Col>
-          New Customer?{" "}
+          Have an account ?{" "}
           <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
-            Register
+            Login
           </Link>
         </Col>
       </Row>
